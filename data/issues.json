@@ -1,0 +1,122 @@
+[
+    {
+        "issue_id": "JS-1001",
+        "corporation_id": "CC-001",
+        "ward_number": 5,
+        "category": "Waste Management",
+        "location": "Mirpur Road, Ward 5",
+        "description": "Uncollected garbage near the local market.",
+        "submission_date": "2026-11-10",
+        "department": "Waste Management Department",
+        "status": "Under Review",
+        "assigned_officer_id": null
+    },
+    {
+        "issue_id": "JS-1002",
+        "corporation_id": "CC-001",
+        "ward_number": 8,
+        "category": "Road Maintenance",
+        "location": "Road 12, Ward 8",
+        "description": "Several potholes are causing traffic problems.",
+        "submission_date": "2026-11-11",
+        "department": "Road Maintenance Department",
+        "status": "In Progress",
+        "assigned_officer_id": null
+    },
+    {
+        "issue_id": "JS-1003",
+        "corporation_id": "CC-001",
+        "ward_number": 3,
+        "category": "Drainage",
+        "location": "College Road, Ward 3",
+        "description": "Drain is blocked and water is accumulating.",
+        "submission_date": "2026-11-12",
+        "department": "Drainage Department",
+        "status": "Resolved",
+        "assigned_officer_id": "OFF-003"
+    },
+    {
+        "issue_id": "JS-1004",
+        "corporation_id": "CC-001",
+        "ward_number": 10,
+        "category": "Street Lighting",
+        "location": "Station Road, Ward 10",
+        "description": "Streetlights are not working at night.",
+        "submission_date": "2026-11-12",
+        "department": "Street Lighting Department",
+        "status": "Resolved",
+        "assigned_officer_id": "OFF-004"
+    },
+    {
+        "issue_id": "JS-1005",
+        "corporation_id": "CC-001",
+        "ward_number": 6,
+        "category": "Public Facilities",
+        "location": "Community Park, Ward 6",
+        "description": "Broken benches need repair.",
+        "submission_date": "2026-11-13",
+        "department": "Public Facilities Department",
+        "status": "Under Review",
+        "assigned_officer_id": null
+    },
+    {
+        "issue_id": "JS-1006",
+        "corporation_id": "CC-001",
+        "ward_number": 2,
+        "category": "Waste Management",
+        "location": "Bazar Road, Ward 2",
+        "description": "Waste collection has been delayed.",
+        "submission_date": "2026-11-14",
+        "department": "Not Assigned",
+        "status": "Submitted",
+        "assigned_officer_id": null
+    },
+    {
+        "issue_id": "JS-1007",
+        "corporation_id": "CC-001",
+        "ward_number": 9,
+        "category": "Drainage",
+        "location": "Lake Road, Ward 9",
+        "description": "Waterlogging occurs after rainfall.",
+        "submission_date": "2026-11-15",
+        "department": "Drainage Department",
+        "status": "Resolved",
+        "assigned_officer_id": null
+    },
+    {
+        "issue_id": "JS-1008",
+        "corporation_id": "CC-001",
+        "ward_number": 4,
+        "category": "Road Maintenance",
+        "location": "School Road, Ward 4",
+        "description": "A damaged footpath needs maintenance.",
+        "submission_date": "2026-11-16",
+        "department": "Not Assigned",
+        "status": "Submitted",
+        "assigned_officer_id": null
+    },
+    {
+        "issue_id": "JS-1009",
+        "corporation_id": "CC-001",
+        "ward_number": 7,
+        "category": "Street Lighting",
+        "location": "Main Road, Ward 7",
+        "description": "A streetlight pole is damaged.",
+        "submission_date": "2026-11-17",
+        "department": "Street Lighting Department",
+        "status": "In Progress",
+        "assigned_officer_id": null
+    },
+    {
+        "issue_id": "JS-1010",
+        "corporation_id": "CC-001",
+        "ward_number": 1,
+        "category": "Public Facilities",
+        "location": "Public Playground, Ward 1",
+        "description": "Playground equipment requires maintenance.",
+        "submission_date": "2026-11-18",
+        "department": "Not Assigned",
+        "status": "Rejected",
+        "assigned_officer_id": null
+    }
+]

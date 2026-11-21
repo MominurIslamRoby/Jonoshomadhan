@@ -1,0 +1,38 @@
+
+[
+    {
+        "officer_id": "OFF-001",
+        "name": "Rahim Ahmed",
+        "department_id": "D-001",
+        "corporation_id": "CC-001",
+        "designation": "Department Officer"
+    },
+    {
+        "officer_id": "OFF-002",
+        "name": "Karim Hasan",
+        "department_id": "D-002",
+        "corporation_id": "CC-001",
+        "designation": "Field Supervisor"
+    },
+    {
+        "officer_id": "OFF-003",
+        "name": "Mahmud Hasan",
+        "department_id": "D-003",
+        "corporation_id": "CC-001",
+        "designation": "Drainage Officer"
+    },
+    {
+        "officer_id": "OFF-004",
+        "name": "Sabbir Hossain",
+        "department_id": "D-004",
+        "corporation_id": "CC-001",
+        "designation": "Lighting Supervisor"
+    },
+    {
+        "officer_id": "OFF-005",
+        "name": "Imran Hossain",
+        "department_id": "D-005",
+        "corporation_id": "CC-001",
+        "designation": "Facilities Officer"
+    }
+]

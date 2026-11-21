@@ -1,0 +1,27 @@
+[
+    {
+        "department_id": "D-001",
+        "name": "Waste Management Department",
+        "corporation_id": "CC-001"
+    },
+    {
+        "department_id": "D-002",
+        "name": "Road Maintenance Department",
+        "corporation_id": "CC-001"
+    },
+    {
+        "department_id": "D-003",
+        "name": "Drainage Department",
+        "corporation_id": "CC-001"
+    },
+    {
+        "department_id": "D-004",
+        "name": "Street Lighting Department",
+        "corporation_id": "CC-001"
+    },
+    {
+        "department_id": "D-005",
+        "name": "Public Facilities Department",
+        "corporation_id": "CC-001"
+    }
+]

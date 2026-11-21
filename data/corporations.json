@@ -1,0 +1,32 @@
+[
+    {
+        "corporation_id": "CC-001",
+        "name": "Dhaka North City Corporation",
+        "city": "Dhaka",
+        "status": "Active"
+    },
+    {
+        "corporation_id": "CC-002",
+        "name": "Dhaka South City Corporation",
+        "city": "Dhaka",
+        "status": "Active"
+    },
+    {
+        "corporation_id": "CC-003",
+        "name": "Chattogram City Corporation",
+        "city": "Chattogram",
+        "status": "Active"
+    },
+    {
+        "corporation_id": "CC-004",
+        "name": "Rajshahi City Corporation",
+        "city": "Rajshahi",
+        "status": "Active"
+    },
+    {
+        "corporation_id": "CC-005",
+        "name": "Khulna City Corporation",
+        "city": "Khulna",
+        "status": "Active"
+    }
+]
