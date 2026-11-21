@@ -1,191 +1,331 @@
-# Jonoshomadhan (জনসমাধান)
+# 🏙️ JONOSHOMADHAN — জনসমাধান
 
-### A Multi-City Corporation Citizen Service Request and Work Order Management System
+<h3 align="center">A Civic Technology Platform for Smarter Public Service Management</h3>
 
-**Tagline:** নাগরিকের সমস্যা, সমাধানের অগ্রযাত্রা।
+<p align="center">
+  <strong>নাগরিকের সমস্যা, সমাধানের অগ্রযাত্রা।</strong>
+</p>
+
+<p align="center">
+  <img src="assets/jonoshomadhan_logo.png" alt="Jonoshomadhan Logo" width="420">
+</p>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/Python-3.10%2B-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python">
+  <img src="https://img.shields.io/badge/Tkinter-GUI-FFCA28?style=for-the-badge" alt="Tkinter">
+  <img src="https://img.shields.io/badge/Storage-JSON-000000?style=for-the-badge&logo=json&logoColor=white" alt="JSON">
+  <img src="https://img.shields.io/badge/Platform-Windows-0078D4?style=for-the-badge&logo=windows&logoColor=white" alt="Windows">
+  <img src="https://img.shields.io/badge/Status-Prototype-15966D?style=for-the-badge" alt="Prototype">
+</p>
+
+<p align="center">
+  <a href="#-overview">Overview</a> •
+  <a href="#-features">Features</a> •
+  <a href="#-technology-stack">Technology</a> •
+  <a href="#-installation--setup">Installation</a> •
+  <a href="#-project-structure">Structure</a> •
+  <a href="#-roadmap">Roadmap</a>
+</p>
 
 ---
 
-## 1. Project Overview
+## 🌐 Overview
 
-Jonoshomadhan is a Python-based desktop application designed to manage citizen service requests for City Corporations in Bangladesh.
+**Jonoshomadhan (জনসমাধান)** is a multi-city corporation citizen service request and work order management system designed to improve how public service complaints are recorded, assigned, monitored, and resolved.
 
-The system allows citizens' reported problems to be recorded and managed. It helps administrators monitor requests, assign responsible departments, update request statuses, and generate analytical reports.
+The platform aims to establish a structured connection between citizens, city corporation departments, and responsible field officers through a centralized service management workflow.
 
-The project is developed as an academic prototype for the **Programming in Python** course. It demonstrates how Python programming concepts can be applied to solve a practical civic service management problem.
+From reporting infrastructure problems to tracking departmental work orders, Jonoshomadhan provides an organized approach to managing civic service requests.
 
-**Note:** Jonoshomadhan is an independent academic prototype and is not an officially endorsed or integrated government system.
+The current implementation is a Python-based desktop prototype built with Tkinter and JSON file storage.
 
-## 2. Project Objectives
+> **Our Vision:** Making public service management more organized, transparent, accessible, and accountable through technology.
 
-- Provide a centralized system for managing citizen service requests.
-- Organize requests by City Corporation, ward, and issue category.
-- Support department assignment and request status tracking.
-- Maintain persistent records using JSON files.
-- Generate analytical reports and export request data to CSV.
+## 🎯 Project Objectives
 
-## 3. Key Features
+- Centralize citizen service requests from multiple city corporations.
+- Organize complaints according to categories and departments.
+- Improve departmental assignment and officer accountability.
+- Monitor the progress of assigned service requests.
+- Introduce work order management and completion verification.
+- Generate meaningful operational reports and statistics.
+- Establish a foundation for a scalable civic technology platform.
 
-### Request Management
-- Create new citizen service requests.
-- View all submitted requests.
-- Search requests using their unique ID.
-- Edit existing request information.
-- Delete requests when necessary.
+## ✨ Features
 
-### Department Management
-- Assign requests to responsible departments.
-- Load department information from JSON data.
-- Track assigned and unassigned requests.
+### 📊 Administrative Dashboard
 
-### Status Management
-- Submitted
-- Under Review
-- Assigned
-- In Progress
-- Resolved
-- Rejected
+- Overview of total service requests.
+- Resolved and pending request statistics.
+- Automatic resolution rate calculation.
+- Organized service request register.
+- Search and refresh functionality.
 
-### Analytics and Reporting
-- Display total service requests.
-- Calculate resolved and pending requests.
-- Calculate the resolution percentage.
-- Generate status-wise breakdowns.
-- Generate category-wise breakdowns.
-- Generate department-wise breakdowns.
+### 📝 Citizen Service Request Management
 
-### Data Management
-- Store application data in JSON files.
-- Load saved records when the application starts.
-- Save changes for persistent data storage.
-- Export request records to CSV format.
+- Register new service requests.
+- Generate unique request IDs.
+- Record corporation, ward, category, location, and description.
+- View request details.
+- Edit existing requests.
+- Delete requests with confirmation.
+- Maintain persistent records using JSON storage.
 
-## 4. Technologies Used
+### 🏢 Department & Officer Assignment
+
+- Corporation-specific department selection.
+- Assign service requests to responsible officers.
+- Display assigned officer information.
+- Manage departmental responsibilities.
+
+### 📋 Work Order Management
+
+- Generate work orders for assigned requests.
+- Monitor operational progress.
+- Update work order statuses.
+- Submit completed work for verification.
+- Approve or reject completion with verification notes.
+- Synchronize work order verification with complaint status.
+
+### 📈 Analytics & Reporting
+
+- Generate service request summaries.
+- Analyze request status distribution.
+- Review category-wise statistics.
+- Review department-wise statistics.
+- Calculate resolution percentages.
+- Export service request records to CSV.
+
+## 🖥️ Application Preview
+
+### Main Administrative Dashboard
+
+<p align="center">
+  <img src="assets/dashboard-preview.png" alt="Jonoshomadhan Administrative Dashboard" width="100%">
+</p>
+
+*Add your actual dashboard screenshot to the assets folder and name it `dashboard-preview.png` to display it here.*
+
+### Work Order Management
+
+<p align="center">
+  <img src="assets/work-order-preview.png" alt="Jonoshomadhan Work Order Management" width="100%">
+</p>
+
+*Add a work order management screenshot as `work-order-preview.png` when available.*
+
+## 🛠️ Technology Stack
 
 | Technology | Purpose |
 |---|---|
-| Python 3 | Core programming language |
-| Tkinter | Graphical User Interface |
-| JSON | Data storage and persistence |
-| CSV | Report data export |
-| datetime | Date and time handling |
-| os and pathlib | File and directory management |
+| Python | Core application logic |
+| Tkinter | Desktop graphical user interface |
+| JSON | Data persistence and storage |
+| CSV | Report export |
+| Git | Version control |
+| GitHub | Source code hosting |
 
-**Dependencies:** Python Standard Library only. No third-party packages are required.
+**Development approach:** Object-Oriented Programming (OOP), modular architecture, file handling, exception handling, and data validation.
 
-## 5. Project Structure
+**Dependencies:** Python standard library only. No third-party packages are currently required.
+
+## 🏗️ System Modules
+
+| Module | Responsibility |
+|---|---|
+| `main.py` | Application entry point |
+| `interface.py` | Graphical user interface |
+| `models.py` | Community issue data model |
+| `issue_manager.py` | Service request operations |
+| `officer_manager.py` | Officer management |
+| `work_order_manager.py` | Work order operations |
+| `report_manager.py` | Analytics and CSV reporting |
+| `storage.py` | JSON file storage management |
+
+## 📁 Project Structure
 
 ```text
 Jonoshomadhan/
 │
+├── assets/
+│   ├── jonoshomadhan_logo.png
+│   └── jonoshomadhan_icon.png
+│
 ├── data/
 │   ├── corporations.json
 │   ├── departments.json
-│   └── issues.json
+│   ├── issues.json
+│   ├── officers.json
+│   └── work_orders.json
 │
 ├── main.py
+├── interface.py
 ├── models.py
 ├── issue_manager.py
-├── storage.py
-├── interface.py
+├── officer_manager.py
+├── work_order_manager.py
 ├── report_manager.py
-├── .gitignore
-└── README.md
+├── storage.py
+│
+├── README.md
+└── .gitignore
 ```
 
-### Main Modules
+## ⚙️ Installation & Setup
 
-| File | Responsibility |
-|---|---|
-| `main.py` | Application entry point |
-| `models.py` | Defines the CommunityIssue class |
-| `issue_manager.py` | Handles request management and business logic |
-| `storage.py` | Handles JSON file reading and writing |
-| `interface.py` | Implements the Tkinter graphical interface |
-| `report_manager.py` | Generates analytics and CSV reports |
+Follow these instructions to run Jonoshomadhan locally.
 
-## 6. Installation and Execution
+### 1. Prerequisites
 
-### Prerequisites
-- Python 3.10 or later
-- Visual Studio Code (recommended)
+Install:
 
-### Step 1: Clone the Repository
+- Python 3.10 or later.
+- Git.
+- Visual Studio Code (recommended).
+
+Make sure Tkinter is available in your Python installation.
+
+### 2. Clone the Repository
 
 ```bash
-git clone <your-repository-url>
+git clone https://github.com/MominurIslamRoby/Jonoshomadhan.git
 ```
 
-### Step 2: Navigate to the Project Directory
+### 3. Navigate to the Project Directory
 
 ```bash
 cd Jonoshomadhan
 ```
 
-### Step 3: Create a Virtual Environment
+### 4. Create a Virtual Environment
 
 ```bash
 python -m venv .venv
 ```
 
-### Step 4: Activate the Virtual Environment
+### 5. Activate the Virtual Environment
 
-**Windows:**
+**Windows PowerShell:**
 
-```bash
-.venv\Scripts\activate
+```powershell
+.venv\Scripts\Activate.ps1
 ```
 
-### Step 5: Run the Application
+**Windows Command Prompt:**
+
+```cmd
+.venv\Scripts\activate.bat
+```
+
+### 6. Run the Application
 
 ```bash
 python main.py
 ```
 
-The Jonoshomadhan desktop application will launch.
+The Jonoshomadhan administrative desktop application should now launch.
 
-## 7. Data Storage
+## 🔄 Service Request Workflow
 
-The application uses JSON files for local data persistence.
+```mermaid
+flowchart TD
+    A([New Citizen Service Request]) --> B[Register Request]
+    B --> C[Review Request]
+    C --> D[Assign Department]
+    D --> E[Assign Responsible Officer]
+    E --> F[Generate Work Order]
+    F --> G[Officer Performs Assigned Work]
+    G --> H[Submit Work for Verification]
+    H --> I{Administrative Verification}
+    I -->|Approved| J([Request Resolved])
+    I -->|Rejected| K[Return to In Progress]
+    K --> G
+```
 
-- `corporations.json` stores City Corporation information.
-- `departments.json` stores department information.
-- `issues.json` stores citizen service request records.
+## 🗃️ Data Management
 
-Changes made through the application are saved to the corresponding JSON file, allowing records to remain available after the application is closed.
+Jonoshomadhan currently uses JSON files for local data persistence.
 
-## 8. Sample Issue Categories
+| File | Description |
+|---|---|
+| `corporations.json` | City corporation records |
+| `departments.json` | Department information |
+| `issues.json` | Citizen service requests |
+| `officers.json` | Officer information |
+| `work_orders.json` | Work order records |
 
-- Waste Management
-- Road Maintenance
-- Drainage
-- Street Lighting
-- Public Facilities
-- Other
+The application loads existing records when initialized and saves changes to the corresponding JSON files.
 
-## 9. Future Improvements
+## 🔐 Project Scope & Disclaimer
 
-- Citizen registration and authentication.
-- Separate administrative and departmental accounts.
-- Real-time citizen request tracking.
-- Notifications for request status changes.
-- Interactive maps and location-based reporting.
-- Database integration using PostgreSQL.
-- Web and mobile application support.
-- Deployment for multiple City Corporations.
+Jonoshomadhan is an independently developed academic software prototype.
 
-## 10. Academic Information
+- The corporation and operational records currently included are sample data.
+- This project is not an officially endorsed or deployed system of any Bangladesh City Corporation.
+- It does not currently connect to government databases or official services.
+- The current version uses local JSON storage and is intended for demonstration and educational purposes.
 
-**Project Name:** Jonoshomadhan (জনসমাধান)
+## 🚀 Roadmap
 
-**Course:** CSC 4162 – Programming in Python
+The following improvements are potential future development goals:
 
-**Semester:** Fall 2026–27
+- [ ] Citizen-facing web portal.
+- [ ] Responsive mobile application.
+- [ ] Citizen registration and authentication.
+- [ ] Online service request submission.
+- [ ] Real-time request tracking.
+- [ ] Interactive geographical complaint mapping.
+- [ ] Role-based access control.
+- [ ] Advanced notification system.
+- [ ] Cloud-based database integration.
+- [ ] Multi-city corporation administration.
+- [ ] Advanced analytics and reporting.
+- [ ] Bangla and English language support.
 
-**Project Type:** Python Desktop Application
+## 🎓 Academic Project Information
 
-**Development Approach:** Object-Oriented Programming
+**Project Name:** Jonoshomadhan — জনসমাধান
+
+**Project Category:** Civic Technology / Information System
+
+**Current Application Type:** Desktop Management Software
+
+**Programming Language:** Python
+
+**Course:** Programming in Python
+
+**Institution:** North South University
+
+**Project Purpose:** Academic midterm project and prototype development.
+
+## 👨‍💻 Developer
+
+<p align="center">
+  <strong>Mominur Islam Roby</strong><br>
+  Student Developer | Python & Software Development
+</p>
+
+<p align="center">
+  <a href="https://github.com/MominurIslamRoby">
+    <img src="https://img.shields.io/badge/GitHub-MominurIslamRoby-181717?style=for-the-badge&logo=github" alt="GitHub Profile">
+  </a>
+  <a href="https://github.com/MominurIslamRoby/Jonoshomadhan">
+    <img src="https://img.shields.io/badge/Repository-Jonoshomadhan-2EA44F?style=for-the-badge&logo=github" alt="Repository">
+  </a>
+</p>
 
 ---
 
-*Jonoshomadhan — নাগরিকের সমস্যা, সমাধানের অগ্রযাত্রা।*
+<p align="center">
+  <img src="assets/jonoshomadhan_icon.png" alt="Jonoshomadhan Icon" width="55">
+</p>
+
+<h3 align="center">জনসমাধান | JONOSHOMADHAN</h3>
+
+<p align="center">
+  <strong>Building a smarter approach to citizen service management.</strong>
+</p>
+
+<p align="center">
+  Made with ❤️ in Bangladesh 🇧🇩
+</p>
