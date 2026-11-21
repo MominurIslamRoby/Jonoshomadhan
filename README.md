@@ -101,18 +101,18 @@ The current implementation is a Python-based desktop prototype built with Tkinte
 ### Main Administrative Dashboard
 
 <p align="center">
-  <img src="assets/dashboard-preview.png" alt="Jonoshomadhan Administrative Dashboard" width="100%">
+  <img width="1920" height="1020" alt="image" src="https://github.com/user-attachments/assets/bf7d85ba-ff40-4eb1-9723-4aeb1c333666" />
+
 </p>
 
-*Add your actual dashboard screenshot to the assets folder and name it `dashboard-preview.png` to display it here.*
 
 ### Work Order Management
 
 <p align="center">
-  <img src="assets/work-order-preview.png" alt="Jonoshomadhan Work Order Management" width="100%">
+  <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/1473a7c0-ac29-40f7-aeff-a40e8423ae06" />
+
 </p>
 
-*Add a work order management screenshot as `work-order-preview.png` when available.*
 
 ## 🛠️ Technology Stack
 
