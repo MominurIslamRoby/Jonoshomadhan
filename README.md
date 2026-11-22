@@ -294,7 +294,7 @@ The following improvements are potential future development goals:
 
 **Course:** Programming in Python
 
-**Institution:** North South University
+**Institution:** American International University-Bangladesh
 
 **Project Purpose:** Academic midterm project and prototype development.
 
