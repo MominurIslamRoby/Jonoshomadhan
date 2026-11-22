@@ -39,6 +39,7 @@ class JonoshomadhanApp:
         self.synchronize_issue_statuses()
 
         self.search_var = tk.StringVar()
+        self.status_filter_var = tk.StringVar(value="All Statuses")
         self.stat_labels = {}
 
         self.create_header()
@@ -46,9 +47,6 @@ class JonoshomadhanApp:
         self.create_request_section()
         self.refresh_table()
 
-    # ---------------------------------------------------------
-    # BRAND ASSETS
-    # ---------------------------------------------------------
 
     def _load_scaled_image(self, image_path, max_width, max_height):
         image = tk.PhotoImage(file=str(image_path))
@@ -98,9 +96,6 @@ class JonoshomadhanApp:
                 parent=self.root
             )
 
-    # ---------------------------------------------------------
-    # STYLES
-    # ---------------------------------------------------------
 
     def configure_styles(self):
         style = ttk.Style()
@@ -160,9 +155,6 @@ class JonoshomadhanApp:
             arrowcolor="#526579"
         )
 
-    # ---------------------------------------------------------
-    # STATUS SYNCHRONIZATION
-    # ---------------------------------------------------------
 
     def synchronize_issue_statuses(self):
         status_map = {
@@ -293,9 +285,6 @@ class JonoshomadhanApp:
             height=4
         ).pack(fill="x")
 
-    # ---------------------------------------------------------
-    # VECTOR ICONS
-    # ---------------------------------------------------------
 
     def create_vector_icon(
         self,
@@ -627,9 +616,6 @@ class JonoshomadhanApp:
 
             label.config(text=str(value))
 
-    # ---------------------------------------------------------
-    # REQUEST SECTION
-    # ---------------------------------------------------------
 
     def create_request_section(self):
         section = tk.Frame(
@@ -830,6 +816,48 @@ class JonoshomadhanApp:
         ).pack(
             side="left",
             pady=8
+        )
+
+        # Status filter placed between the instruction and action buttons.
+        filter_area = tk.Frame(
+            footer,
+            bg="#F3F6FA"
+        )
+
+        filter_area.pack(
+            side="left",
+            padx=(24, 10),
+            pady=3
+        )
+
+        tk.Label(
+            filter_area,
+            text="FILTER BY STATUS",
+            font=("Segoe UI", 8, "bold"),
+            fg="#718096",
+            bg="#F3F6FA"
+        ).pack(
+            side="left",
+            padx=(0, 8)
+        )
+
+        status_options = ["All Statuses"] + list(
+            self.issue_manager.STATUSES
+        )
+
+        self.status_filter_combo = ttk.Combobox(
+            filter_area,
+            textvariable=self.status_filter_var,
+            values=status_options,
+            state="readonly",
+            width=19,
+            font=("Segoe UI", 9)
+        )
+
+        self.status_filter_combo.pack(side="left")
+        self.status_filter_combo.bind(
+            "<<ComboboxSelected>>",
+            lambda event: self.search_issues()
         )
 
         action_group = tk.Frame(
@@ -1097,9 +1125,6 @@ class JonoshomadhanApp:
             for value in blended
         )
 
-    # ---------------------------------------------------------
-    # TABLE MANAGEMENT
-    # ---------------------------------------------------------
 
     def insert_issue_row(self, issue):
         row_index = len(
@@ -1126,33 +1151,32 @@ class JonoshomadhanApp:
         )
 
     def refresh_table(self):
+        # Refresh clears the text search but preserves the selected status filter.
         self.search_var.set("")
-        self.table.delete(
-            *self.table.get_children()
-        )
-
-        for issue in self.issue_manager.view_issues():
-            self.insert_issue_row(issue)
-
-        if hasattr(self, "record_count_label"):
-            count = len(
-                self.table.get_children()
-            )
-
-            self.record_count_label.config(
-                text=f"{count} RECORDS"
-            )
-
+        self.apply_request_filters()
         self.update_dashboard()
 
     def search_issues(self):
+        # Search and status filtering are applied together.
+        self.apply_request_filters()
+
+    def apply_request_filters(self):
         keyword = self.search_var.get().strip().lower()
+        selected_status = self.status_filter_var.get()
 
         self.table.delete(
             *self.table.get_children()
         )
 
+        visible_count = 0
+
         for issue in self.issue_manager.view_issues():
+            if (
+                selected_status != "All Statuses"
+                and issue.status != selected_status
+            ):
+                continue
+
             searchable_values = [
                 issue.issue_id,
                 issue.category,
@@ -1165,24 +1189,28 @@ class JonoshomadhanApp:
                 issue.status
             ]
 
-            if any(
+            if keyword and not any(
                 keyword in str(value).lower()
                 for value in searchable_values
             ):
-                self.insert_issue_row(issue)
+                continue
+
+            self.insert_issue_row(issue)
+            visible_count += 1
 
         if hasattr(self, "record_count_label"):
-            count = len(
-                self.table.get_children()
-            )
+            if selected_status == "All Statuses" and not keyword:
+                count_text = f"{visible_count} RECORDS"
+            else:
+                count_text = f"{visible_count} MATCHING RECORDS"
 
             self.record_count_label.config(
-                text=f"{count} MATCHING RECORDS"
+                text=count_text
             )
 
     def clear_search(self):
         self.search_var.set("")
-        self.refresh_table()
+        self.apply_request_filters()
 
     def get_selected_issue(self):
         selected = self.table.selection()
@@ -1204,9 +1232,6 @@ class JonoshomadhanApp:
             values[0]
         )
 
-    # ---------------------------------------------------------
-    # VIEW REQUEST DETAILS
-    # ---------------------------------------------------------
 
     def view_selected_issue(self):
         issue = self.get_selected_issue()
@@ -1374,9 +1399,7 @@ class JonoshomadhanApp:
             pady=8
         ).pack(pady=10)
 
-    # ---------------------------------------------------------
-    # DEPARTMENT AND OFFICER MANAGEMENT
-    # ---------------------------------------------------------
+
 
     def load_departments(self, corporation_id):
         storage = JSONStorage(
@@ -1408,9 +1431,6 @@ class JonoshomadhanApp:
             else officer_id
         )
 
-    # ---------------------------------------------------------
-    # MANAGE ASSIGNMENT
-    # ---------------------------------------------------------
 
     def manage_assignment(self):
         issue = self.get_selected_issue()
@@ -1682,9 +1702,7 @@ class JonoshomadhanApp:
             pady=8
         ).pack(pady=12)
 
-    # ---------------------------------------------------------
-    # WORK ORDER MANAGEMENT
-    # ---------------------------------------------------------
+
 
     def view_work_orders(self):
         window = tk.Toplevel(self.root)
@@ -3039,9 +3057,6 @@ class JonoshomadhanApp:
         refresh_work_order_table()
         search_entry.focus_set()
 
-    # ---------------------------------------------------------
-    # DELETE REQUEST
-    # ---------------------------------------------------------
 
     def delete_selected_issue(self):
         issue = self.get_selected_issue()
@@ -3074,9 +3089,6 @@ class JonoshomadhanApp:
                 parent=self.root
             )
 
-    # ---------------------------------------------------------
-    # ADD NEW REQUEST
-    # ---------------------------------------------------------
 
     def open_add_request_form(self):
         form = tk.Toplevel(self.root)
@@ -3260,9 +3272,6 @@ class JonoshomadhanApp:
             pady=9
         ).pack(pady=12)
 
-    # ---------------------------------------------------------
-    # ANALYTICS
-    # ---------------------------------------------------------
 
     def view_analytics(self):
         report_text = self.report_manager.generate_report_text()
@@ -3340,9 +3349,6 @@ class JonoshomadhanApp:
             pady=7
         ).pack(pady=12)
 
-    # ---------------------------------------------------------
-    # CSV EXPORT
-    # ---------------------------------------------------------
 
     def export_csv(self):
         file_path = filedialog.asksaveasfilename(
@@ -3378,10 +3384,6 @@ class JonoshomadhanApp:
                 parent=self.root
             )
 
-
-# -------------------------------------------------------------
-# APPLICATION ENTRY POINT
-# -------------------------------------------------------------
 
 def launch_app(issue_manager):
     root = tk.Tk()
