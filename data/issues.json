@@ -20,8 +20,8 @@
         "description": "Several potholes are causing traffic problems.",
         "submission_date": "2026-11-11",
         "department": "Road Maintenance Department",
-        "status": "In Progress",
-        "assigned_officer_id": null
+        "status": "Resolved",
+        "assigned_officer_id": "OFF-002"
     },
     {
         "issue_id": "JS-1003",
@@ -117,6 +117,30 @@
         "submission_date": "2026-11-18",
         "department": "Not Assigned",
         "status": "Rejected",
+        "assigned_officer_id": null
+    },
+    {
+        "issue_id": "JS-1011",
+        "corporation_id": "CC-005",
+        "ward_number": 5,
+        "category": "Waste Management",
+        "location": "Miya Bari Mosjid Road",
+        "description": "Waste bin is overflowing",
+        "submission_date": "2026-11-22",
+        "department": "Not Assigned",
+        "status": "Submitted",
+        "assigned_officer_id": null
+    },
+    {
+        "issue_id": "JS-1012",
+        "corporation_id": "CC-001",
+        "ward_number": 5,
+        "category": "Drainage",
+        "location": "Kuril Bishwaroad",
+        "description": "Drainage Problem from Kuril to AIUB",
+        "submission_date": "2026-11-22",
+        "department": "Not Assigned",
+        "status": "Submitted",
         "assigned_officer_id": null
     }
 ]
