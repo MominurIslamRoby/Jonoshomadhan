@@ -8,8 +8,8 @@
         "description": "Uncollected garbage near the local market.",
         "submission_date": "2026-11-10",
         "department": "Waste Management Department",
-        "status": "Under Review",
-        "assigned_officer_id": null
+        "status": "Resolved",
+        "assigned_officer_id": "OFF-001"
     },
     {
         "issue_id": "JS-1002",
